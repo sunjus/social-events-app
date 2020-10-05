@@ -1,0 +1,17 @@
+label#thumbnail {
+  border: 1px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 30vh;
+}
+
+label#thumbnail input {
+  display: none;
+}
+
+label#thumbnail.has-thumbnail img {
+  display: none;
+}
