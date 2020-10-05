@@ -3,6 +3,7 @@ import moment from "moment";
 import socketio from "socket.io-client";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
+import config from "../../config";
 import "./dashboard.css";
 import {
   Alert,
@@ -31,7 +32,6 @@ const Dashboard = ({ history, eventFilter }) => {
   //const [dropdownOpen, setDropdownOpen] = useState(false);
   const [eventRequestMessage, setEventRequestMessage] = useState("");
   const [eventRequestSuccess, setEventRequestSuccess] = useState(false);
-
   //const toggle = () => setDropdownOpen((prevState) => !prevState);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Dashboard = ({ history, eventFilter }) => {
 
   const socket = useMemo(() => {
     if (user_id) {
-      return socketio("http://s2.pal9.cyou:8000", {
+      return socketio(config.backendURL, {
         query: { user: user_id },
       });
     }

@@ -7,8 +7,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const s3 = new aws.S3({
-  accessKeyId: process.env.ACCESS_KEY_ID,
-  secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  accessKeyId: process.env.AWS_S3_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_S3_SECRET_ACCESS_KEY,
 });
 
 module.exports = multer({

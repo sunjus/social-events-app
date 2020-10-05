@@ -1,7 +1,8 @@
 import axios from "axios";
+import config from "../config";
 
 const api = axios.create({
-  baseURL: "http://s2.pal9.cyou:8000",
+  baseURL: config.backendURL
 });
 
 export default api;
