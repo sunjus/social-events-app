@@ -37,8 +37,7 @@ const Dashboard = ({ history, eventFilter }) => {
   useEffect(() => {
     if (eventFilter.index === 0) {
       getEvents();
-    }
-    if (eventFilter.index === 1) {
+    } else if (eventFilter.index === 1) {
       myEventsHandler();
     } else {
       getEvents(eventFilter.list[eventFilter.index].name);
